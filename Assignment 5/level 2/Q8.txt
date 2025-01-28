@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static String findYoungest(int[] ages) {
+        int minAge = ages[0];
+        int youngestIndex = 0;
+
+        for (int i = 1; i < ages.length; i++) {
+            if (ages[i] < minAge) {
+                minAge = ages[i];
+                youngestIndex = i;
+            }
+        }
+
+        switch (youngestIndex) {
+            case 0: return "Amar";
+            case 1: return "Akbar";
+            case 2: return "Anthony";
+            default: return "Unknown";
+        }
+    }
+
+    public static String findTallest(double[] heights) {
+        double maxHeight = heights[0];
+        int tallestIndex = 0;
+
+        for (int i = 1; i < heights.length; i++) {
+            if (heights[i] > maxHeight) {
+                maxHeight = heights[i];
+                tallestIndex = i;
+            }
+        }
+
+        switch (tallestIndex) {
+            case 0: return "Amar";
+            case 1: return "Akbar";
+            case 2: return "Anthony";
+            default: return "Unknown";
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int[] ages = new int[3];
+        double[] heights = new double[3];
+
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Enter age of friend " + (i + 1) + ": ");
+            ages[i] = scanner.nextInt();
+        }
+
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Enter height of friend " + (i + 1) + " in meters: ");
+            heights[i] = scanner.nextDouble();
+        }
+
+        String youngest = findYoungest(ages);
+        String tallest = findTallest(heights);
+
+        System.out.println("The youngest friend is: " + youngest);
+        System.out.println("The tallest friend is: " + tallest);
+
+        scanner.close();
+    }
+}

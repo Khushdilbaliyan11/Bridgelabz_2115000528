@@ -1,0 +1,93 @@
+public class Main {
+
+    public static double convertKmToMiles(double km) {
+        double km2miles = 0.621371;
+        return km * km2miles;
+    }
+
+    public static double convertMilesToKm(double miles) {
+        double miles2km = 1.60934;
+        return miles * miles2km;
+    }
+
+    public static double convertMetersToFeet(double meters) {
+        double meters2feet = 3.28084;
+        return meters * meters2feet;
+    }
+
+    public static double convertFeetToMeters(double feet) {
+        double feet2meters = 0.3048;
+        return feet * feet2meters;
+    }
+
+    public static double convertYardsToFeet(double yards) {
+        double yards2feet = 3;
+        return yards * yards2feet;
+    }
+
+    public static double convertFeetToYards(double feet) {
+        double feet2yards = 0.333333;
+        return feet * feet2yards;
+    }
+
+    public static double convertMetersToInches(double meters) {
+        double meters2inches = 39.3701;
+        return meters * meters2inches;
+    }
+
+    public static double convertInchesToMeters(double inches) {
+        double inches2meters = 0.0254;
+        return inches * inches2meters;
+    }
+
+    public static double convertInchesToCentimeters(double inches) {
+        double inches2cm = 2.54;
+        return inches * inches2cm;
+    }
+
+    public static double convertFahrenheitToCelsius(double fahrenheit) {
+        return (fahrenheit - 32) * 5 / 9;
+    }
+
+    public static double convertCelsiusToFahrenheit(double celsius) {
+        return (celsius * 9 / 5) + 32;
+    }
+
+    public static double convertPoundsToKilograms(double pounds) {
+        double pounds2kilograms = 0.453592;
+        return pounds * pounds2kilograms;
+    }
+
+    public static double convertKilogramsToPounds(double kilograms) {
+        double kilograms2pounds = 2.20462;
+        return kilograms * kilograms2pounds;
+    }
+
+    public static double convertGallonsToLiters(double gallons) {
+        double gallons2liters = 3.78541;
+        return gallons * gallons2liters;
+    }
+
+    public static double convertLitersToGallons(double liters) {
+        double liters2gallons = 0.264172;
+        return liters * liters2gallons;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Kilometers to Miles: " + convertKmToMiles(10));
+        System.out.println("Miles to Kilometers: " + convertMilesToKm(10));
+        System.out.println("Meters to Feet: " + convertMetersToFeet(10));
+        System.out.println("Feet to Meters: " + convertFeetToMeters(10));
+        System.out.println("Yards to Feet: " + convertYardsToFeet(10));
+        System.out.println("Feet to Yards: " + convertFeetToYards(10));
+        System.out.println("Meters to Inches: " + convertMetersToInches(10));
+        System.out.println("Inches to Meters: " + convertInchesToMeters(10));
+        System.out.println("Inches to Centimeters: " + convertInchesToCentimeters(10));
+        System.out.println("Fahrenheit to Celsius: " + convertFahrenheitToCelsius(100));
+        System.out.println("Celsius to Fahrenheit: " + convertCelsiusToFahrenheit(37.7778));
+        System.out.println("Pounds to Kilograms: " + convertPoundsToKilograms(10));
+        System.out.println("Kilograms to Pounds: " + convertKilogramsToPounds(10));
+        System.out.println("Gallons to Liters: " + convertGallonsToLiters(10));
+        System.out.println("Liters to Gallons: " + convertLitersToGallons(10));
+    }
+}

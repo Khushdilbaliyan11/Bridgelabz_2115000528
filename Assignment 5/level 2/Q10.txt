@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static double calculateBMI(double weight, double heightInCm) {
+        double heightInMeters = heightInCm / 100;
+        return weight / (heightInMeters * heightInMeters);
+    }
+
+    public static String determineStatus(double bmi) {
+        if (bmi < 18.5) {
+            return "Underweight";
+        } else if (bmi >= 18.5 && bmi < 24.9) {
+            return "Normal weight";
+        } else if (bmi >= 25 && bmi < 39.9) {
+            return "Overweight";
+        } else {
+            return "Obesity";
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double[][] personData = new double[10][3];
+        String[] bmiStatus = new String[10];
+
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Enter weight of person " + (i + 1) + " (in kg): ");
+            personData[i][0] = scanner.nextDouble();
+            System.out.print("Enter height of person " + (i + 1) + " (in cm): ");
+            personData[i][1] = scanner.nextDouble();
+
+            double bmi = calculateBMI(personData[i][0], personData[i][1]);
+            personData[i][2] = bmi;
+
+            bmiStatus[i] = determineStatus(bmi);
+        }
+
+        System.out.println("\nPerson Details (Weight, Height, BMI, Status):");
+        for (int i = 0; i < 10; i++) {
+            System.out.printf("Person %d: Weight = %.2f kg, Height = %.2f cm, BMI = %.2f, Status = %s\n",
+                    i + 1, personData[i][0], personData[i][1], personData[i][2], bmiStatus[i]);
+        }
+
+        scanner.close();
+    }
+}
